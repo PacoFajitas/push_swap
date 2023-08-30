@@ -6,33 +6,35 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/30 15:41:00 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:15:57 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
-typedef struct	t_stacks
+typedef struct s_stacks
 {
-	int *stacka;
-	int *stackb;
+	int	*stacka;
+	int	*stackb;
 	int	*stackaux;
 	int	len;
 	int	lena;
 	int	lenb;
-	int flag_error;
-}				s_struct;
+	int	flag_error;
+}				t_struct;
 
-void	ss(int *stacka, int *stackb);
-void	sb(int *stack);
-void	sa(int *stack);
-void	rra(int *a);
-void	rrb(int *b);
-void	ra(int *a);
-void	rb(int *b);
+void	ss(t_struct *stacka);
+void	sb(t_struct *stack);
+void	sa(t_struct *stack);
+void	rra(t_struct *a);
+void	rrb(t_struct *b);
+void	ra(t_struct *a);
+void	rb(t_struct *b);
+void	ft_error(void);
+void	ft_swap(int *a, int *b);
 #endif

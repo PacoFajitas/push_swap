@@ -6,14 +6,14 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 14:01:42 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/07/31 14:09:16 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:00:38 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib/push_swap.h"
 
-void ft_error(void)
+void	ft_error(void)
 {
-	write(2,"Error\n", 6);
-	exit(0);
+	write(2, "Error\n", 6);
+	exit (0);
 }

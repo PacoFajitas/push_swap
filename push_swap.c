@@ -6,16 +6,16 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:46:32 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/30 15:45:07 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:12:13 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib/push_swap.h"
 
-int	ft_atoi(const char	*str, s_struct *a)
+int	ft_atoi(const char	*str, t_struct *a)
 {
 	long long int	ret;
-	int	sign;
+	int				sign;
 
 	sign = 1;
 	ret = 0;
@@ -36,30 +36,30 @@ int	ft_atoi(const char	*str, s_struct *a)
 		ret = (ret * 10) + *str - 48;
 		str ++;
 	}
-	if(ret > (long long int)2147483647 || ret < (long long int)2147483647)
+	if (ret > (long long int)2147483647 || ret < (long long int)2147483647)
 		a->flag_error = 1;
 	return (ret * sign);
 }
 
-int	ft_ini_nums(s_struct *ini, int len)
+int	ft_ini_nums(t_struct *ini, int len)
 {
 	ini->len = len - 1;
 	ini->lena = len - 1;
 	ini->lenb = 0;
-	ini->stacka = (int*) malloc(sizeof(int) * (len));
+	ini->stacka = (int *) malloc(sizeof(int) * (len));
 	if (!ini->stacka)
 	{
 		free(ini);
 		return (0);
 	}
-	ini->stackb = (int*) malloc(sizeof(int) * (len));
+	ini->stackb = (int *) malloc(sizeof(int) * (len));
 	if (!ini->stackb)
 	{
 		free(ini->stacka);
 		free(ini);
 		return (0);
 	}
-	ini->stackaux = (int*) malloc(sizeof(int) * len);
+	ini->stackaux = (int *) malloc(sizeof(int) * len);
 	if (!ini->stackaux)
 	{
 		free(ini->stacka);
@@ -72,13 +72,13 @@ int	ft_ini_nums(s_struct *ini, int len)
 
 int	ft_is_num(char *x)
 {
-	while(*x)
+	while (*x)
 	{
-		if(*x >= '0' || *x <= '9')
-			return(1);
-	x++;
+		if (*x >= '0' || *x <= '9')
+			return (1);
+		x++;
 	}
-	return(0);
+	return (0);
 }
 
 int	ft_no_dups(int *src)
@@ -87,13 +87,13 @@ int	ft_no_dups(int *src)
 	int	y;
 
 	x = 0;
-	while(src[x])
+	while (src[x])
 	{
 		y = x;
 		while (y >= 0)
 		{
 			if (src[x] == src[y])
-				return(0);
+				return (0);
 			y--;
 		}
 		x++;
@@ -101,23 +101,29 @@ int	ft_no_dups(int *src)
 	return (1);
 }
 
-int	ft_populate(char **src, s_struct *dest)
+int	ft_populate(char **src, t_struct *dest)
 {
 	int	x;
-	
+
 	x = 1;
-	while(*src[x])
+	while (*src[x])
 	{
-		*dest->stacka = ft_atoi(src[x], dest);
-		if(!dest)
-			return(0);
+		*dest->stacka = ft_atoi(*src[x], dest);
+		if (dest->flag_error == 1)
+		{
+			free(&dest->stacka);
+			free(&dest->stackb);
+			free(&dest->stackaux);
+			free(&dest);
+			ft_error();
+		}
 		dest++;
 		x++;
 	}
-	return(1);
+	return (1);
 }
 
-int	ft_valid_args(int argc, char **argv, s_struct *ehe)
+int	ft_valid_args(int argc, char **argv, t_struct *ehe)
 {
 	int	x;
 
@@ -134,14 +140,14 @@ int	ft_valid_args(int argc, char **argv, s_struct *ehe)
 		return (0);
 	return (1);
 }
-/* int	main(int argc, char **argv)
+ int	main(int argc, char **argv)
 {
-	s_struct *nums;
+	t_struct *nums;
 
 	if (argc == 1)
 		return(0);
 	printf("ok");
-	nums = (s_struct *)malloc(sizeof(s_struct));
+	nums = (t_struct *)malloc(sizeof(t_struct));
 	if(!nums)
 		return(0);
 	if (ft_ini_nums(nums, argc) == 0)
@@ -155,7 +161,7 @@ int	ft_valid_args(int argc, char **argv, s_struct *ehe)
 		free (nums);
 		return (0);
 	}
-} */
+} 
 /* int	main()
 {
 	char	*x = "192839192838";
