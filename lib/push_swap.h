@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/30 18:15:57 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:46:54 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	ra(t_struct *a);
 void	rb(t_struct *b);
 void	ft_error(void);
 void	ft_swap(int *a, int *b);
+void	ft_index(t_struct *aha);
 #endif

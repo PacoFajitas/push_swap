@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:46:32 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/30 18:12:13 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/08/30 19:26:17 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,16 +140,17 @@ int	ft_valid_args(int argc, char **argv, t_struct *ehe)
 		return (0);
 	return (1);
 }
- int	main(int argc, char **argv)
+
+int	main(int argc, char **argv)
 {
-	t_struct *nums;
+	t_struct	*nums;
 
 	if (argc == 1)
-		return(0);
+		return (0);
 	printf("ok");
 	nums = (t_struct *)malloc(sizeof(t_struct));
-	if(!nums)
-		return(0);
+	if (!nums)
+		return (0);
 	if (ft_ini_nums(nums, argc) == 0)
 	{
 		free (nums);
@@ -161,7 +162,7 @@ int	ft_valid_args(int argc, char **argv, t_struct *ehe)
 		free (nums);
 		return (0);
 	}
-} 
+}
 /* int	main()
 {
 	char	*x = "192839192838";
