@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:12:29 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/30 18:15:24 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/06 20:46:26 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,5 @@ void ft_stack_of_3(t_struct *a)
 	else if(a->stacka[0] < a->stacka[1] && a->stacka[0] > a->stacka[2])
 		rra(a);
 }
+
+void ft_stack_of_4()

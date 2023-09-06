@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:57:09 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/30 18:23:28 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/06 14:58:41 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sa(t_struct *stack)
 	write(1, "sa\n", 3);
 }
 
-void	b(t_struct *stack)
+void	sb(t_struct *stack)
 {
 	ft_swap(&stack->stackb[0], &stack->stackb[1]);
 	write(1, "sb\n", 3);

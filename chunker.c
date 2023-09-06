@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 13:59:59 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/31 17:08:15 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/06 15:32:44 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,29 @@
 
 void	ft_chunko(t_struct *aha, int chunk_c)
 {
-	//if el numero que voy a pasar pertenece a la misma mitad del chunk 
-	//que el primero de stack b y el ultimo numero de stackb no, hay que 
-	//hacer un rrr antes de hacer pb para optimizar la division de chunks.
-	//Hacer funcion que revise si los numeros restantes en el stack a estan ya ordenados
-	//para empezar a pasar los numeros del stack b sin pasos innecesarios.
+	int	limit_chunk;
+	int	i;
+	int	j;
+
+	limit_chunk = aha->len / chunk_c;
+	j = limit_chunk;
+	while (chunk_c > 0)
+	{
+		while (i < limit_chunk && aha->lena > 0)
+		{
+			if (aha->stacka[i] <= limit_chunk)
+			{
+				pb(aha);
+				if (aha->stackb[0] <= limit_chunk - (j / 2) && aha->lenb > 1)
+					rb(aha);
+				i++;
+			}
+			else
+				ra(aha);
+		}
+		chunk_c--;
+		limit_chunk += j;
+	}
 }
 
 int	ft_check_ordered(t_struct *aha)
@@ -28,9 +46,9 @@ int	ft_check_ordered(t_struct *aha)
 	i = 0;
 	while (i < aha->lena - 1)
 	{
-		if (aha->stacka[i] > aha->stacka[i+1])
+		if (aha->stacka[i] > aha->stacka[i + 1])
 			return (1);
 		i++;
 	}
-	return(0);	
+	return (0);
 }
