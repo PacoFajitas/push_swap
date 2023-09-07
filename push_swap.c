@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:46:32 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/06 19:10:48 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:44:40 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int	ft_atoi(const char	*str, t_struct *a)
 	sign = 1;
 	ret = 0;
 	a->flag_error = 0;
-	while (*str == 9 || *str == 10 || *str == 11
-		|| *str == 12 || *str == 13 || *str == 32)
-		str++;
 	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
@@ -75,6 +72,10 @@ int	ft_is_num(char *x)
 	int	i;
 
 	i = 0;
+	if (x[i] == '-' || x[i] == '+')
+	{
+		i++;
+	}
 	while (x[i])
 	{
 		if (*x >= '0' && *x <= '9')
@@ -124,13 +125,6 @@ int	ft_populate(char **src, t_struct *dest)
 		}
 		x++;
 	}
-	x = 0;
-	while (dest->stacka[x])
-	{
-		x++;
-	}
-
-	
 	return (1);
 }
 
@@ -139,7 +133,7 @@ int	ft_valid_args(int argc, char **argv, t_struct *ehe)
 	int	x;
 
 	x = 1;
-	while (x < argc)
+ 	while (x < argc)
 	{
 		if (ft_is_num(argv[x]) == 1)
 			ft_error();
@@ -174,8 +168,10 @@ int	main(int argc, char **argv)
 		free (nums);
 		return (0);
 	}
-	 if (nums->len == 3)
+	if (nums->len == 3)
 	 	ft_stack_of_3(nums);
+	if (nums->len == 4)
+	 	ft_stack_of_4(nums);
 	while (i < nums->lena)
 	{
 		printf("%i ", nums->stacka[i]);

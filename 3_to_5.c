@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:12:29 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/06 20:46:26 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:27:05 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,58 @@ void ft_stack_of_3(t_struct *a)
 		rra(a);
 }
 
-void ft_stack_of_4()
+void ft_stack_of_4(t_struct *a)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < a->lena)
+	{
+		if(a->stacka[i] < a->stacka[j])
+			j = i;
+		i++;
+	}
+	if(j == 3)
+		rra(a);
+	else if(j == 2)
+	{
+		rra(a);
+		rra(a);
+	}
+	else if(j == 1)
+		ra(a);
+	pb(a);
+	ft_stack_of_3(a);
+	pa(a);
+}
+void	ft_stack_of_5(t_struct *a)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < a->lena)
+	{
+		if(a->stacka[i] < a->stacka[j])
+			j = i;
+		i++;
+	}
+	if(j == 4)
+		rra(a);
+	else if(j == 3)
+	{
+		rra(a);
+		rra(a);
+	}
+	else if(j == 2)
+	{
+		rra(a);
+		rra(a);
+		rra(a);	
+	}
+	else if(j == 1)
+		ra(a);
+}

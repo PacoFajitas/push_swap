@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/06 18:01:00 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:06:29 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,7 @@ void	ft_error(void);
 void	ft_swap(int *a, int *b);
 void	ft_index(t_struct *aha);
 void	ft_stack_of_3(t_struct *a);
+void	ft_stack_of_4(t_struct *a);
+void	pa(t_struct *l);
+void	pb(t_struct *l);
 #endif
