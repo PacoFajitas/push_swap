@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:46:32 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/07 16:44:40 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:18:55 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,16 @@ int	ft_is_num(char *x)
 {
 	int	i;
 
+	if (x[0] == '\0')
+		return (1);
 	i = 0;
-	if (x[i] == '-' || x[i] == '+')
-	{
+	if ((x[0] == '-' || x[0] == '+') && x[1])
+		i = 1;
+	while (x[i] && (x[i] > '0' && x[i] < '9'))
 		i++;
-	}
-	while (x[i])
-	{
-		if (*x >= '0' && *x <= '9')
-			return (0);
-		i++;
-	}
-	return (1);
+	if (x[i] && (x[i] < '0' || x[i] > '9'))
+		return (1);
+	return (0);
 }
 
 int	ft_no_dups(int *src)
@@ -114,7 +112,7 @@ int	ft_populate(char **src, t_struct *dest)
 	x = 1;
 	while (src[x])
 	{
-		dest->stacka[x - 1] = ft_atoi(src[x], dest);
+		dest->stackaux[x - 1] = ft_atoi(src[x], dest);
 	 	if (dest->flag_error == 1)
 		{
 			free(dest->stacka);
@@ -141,7 +139,7 @@ int	ft_valid_args(int argc, char **argv, t_struct *ehe)
 	}
 	if (ft_populate(argv, ehe) == 0)
 		return (0);
-	if (ft_no_dups(ehe->stacka) == 0)
+	if (ft_no_dups(ehe->stackaux) == 0)
 		ft_error();
 
 	return (1);
@@ -168,10 +166,15 @@ int	main(int argc, char **argv)
 		free (nums);
 		return (0);
 	}
-	if (nums->len == 3)
+	ft_index(nums);
+	if (nums->len == 3 || nums->len == 2)
 	 	ft_stack_of_3(nums);
 	if (nums->len == 4)
-	 	ft_stack_of_4(nums);
+	 	ft_stack_of_4(nums, 0);
+	if (nums->len == 5)
+	 	ft_stack_of_5(nums, 0, 0);
+	if(nums->len > 5)
+		ft_chunko(nums, 2);
 	while (i < nums->lena)
 	{
 		printf("%i ", nums->stacka[i]);

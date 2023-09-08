@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 12:10:31 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/06 18:05:01 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:46:15 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rra(t_struct *a)
 		ft_swap(&a->stacka[0], &a->stacka[i]);
 		i++;
 	}
-	write(1, "rra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_struct *b)
@@ -46,7 +46,7 @@ void	rrb(t_struct *b)
 		ft_swap(&b->stackb[0], &b->stackb[i]);
 		i++;
 	}
-	write(1, "rrb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	ra(t_struct *a)

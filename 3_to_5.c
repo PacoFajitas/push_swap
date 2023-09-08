@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:12:29 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/07 16:27:05 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:52:33 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 
 void ft_stack_of_3(t_struct *a)
 {
-	if (a->stacka[0] > a->stacka[1] && a->stacka[0] < a->stacka[2])
+	if (a->len == 2)
+	{
+		if (a->stacka[0] > a->stacka[1])
+			sa(a);
+	}
+	else if (a->stacka[0] > a->stacka[1] && a->stacka[0] < a->stacka[2])
 		sa(a);
 	else if (a->stacka[0] > a->stacka[1] && a->stacka[1] > a->stacka[2])
 	{
@@ -23,23 +28,24 @@ void ft_stack_of_3(t_struct *a)
 		rra(a);
 	}
 	else if (a->stacka[0] > a->stacka[1] && a->stacka[0] > a->stacka[2])
-		ra(a);
-	else if (a->stacka[0] < a->stacka[1] && a->stacka[1] < a->stacka[2])
 	{
-		sa(a);
 		ra(a);
+		//sa(a);
 	}
 	else if(a->stacka[0] < a->stacka[1] && a->stacka[0] > a->stacka[2])
 		rra(a);
+	else if(a->stacka[0] < a->stacka[1] && a->stacka[1] > a->stacka[2])
+	{
+		rra(a);
+		sa(a);
+	}
 }
 
-void ft_stack_of_4(t_struct *a)
+void ft_stack_of_4(t_struct *a, int j)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	while (i < a->lena)
 	{
 		if(a->stacka[i] < a->stacka[j])
@@ -55,36 +61,33 @@ void ft_stack_of_4(t_struct *a)
 	}
 	else if(j == 1)
 		ra(a);
+	if(a->stacka[0] < a->stacka[1] && a->stacka[1] < a->stacka[2] 
+			&& a->stacka[2] < a->stacka[3])
+		return;
 	pb(a);
 	ft_stack_of_3(a);
 	pa(a);
 }
-void	ft_stack_of_5(t_struct *a)
+void	ft_stack_of_5(t_struct *a, int	i, 	int	j)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
 	while (i < a->lena)
 	{
 		if(a->stacka[i] < a->stacka[j])
 			j = i;
 		i++;
 	}
-	if(j == 4)
+	if(j == 4 || j == 3)
 		rra(a);
-	else if(j == 3)
-	{
+	if(j == 3)
 		rra(a);
-		rra(a);
-	}
-	else if(j == 2)
-	{
-		rra(a);
-		rra(a);
-		rra(a);	
-	}
-	else if(j == 1)
+	if(j == 2 || j == 1)
 		ra(a);
+	if(j == 1)
+		ra(a);
+	if(a->stacka[0] < a->stacka[1] && a->stacka[1] < a->stacka[2] 
+			&& a->stacka[2] < a->stacka[3] && a->stacka[3] < a->stacka[4])
+		return;
+	pb(a);
+	ft_stack_of_4(a, 0);
+	pa(a);
 }

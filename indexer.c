@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:26:46 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/08/31 13:59:09 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:45:02 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_index(t_struct *aha)
 	while (i < aha->len)
 	{
 		j = 0;
-		k = 0;
+		k = 1;
 		while (j < aha->len)
 		{
 			if(aha->stackaux[i] > aha->stackaux[j])
