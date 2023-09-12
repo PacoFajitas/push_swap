@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:26:46 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/08 16:45:02 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/12 21:53:22 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ void	ft_index(t_struct *aha)
 		aha->stacka[i] = k;
 		i++;
 	}
+	i=0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 13:59:59 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/09 12:05:26 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/12 22:13:16 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_chunko(t_struct *aha, int chunk_c)
 
 	limit_chunk = aha->len / chunk_c;
 	j = limit_chunk;
-	limit_chunk += aha->len % chunk_c;
 	while (chunk_c > 0)
 	{
 		i = 0;
@@ -34,9 +33,11 @@ void	ft_chunko(t_struct *aha, int chunk_c)
 				i++;
 			}
 			else
-				ra(aha);
+				optimizacion_chunkero(aha, limit_chunk);
 		}
 		chunk_c--;
+		if (chunk_c == 1)
+			limit_chunk += aha->len % chunk_c;		
 		limit_chunk += j;
 	}
 }

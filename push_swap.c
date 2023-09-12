@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:46:32 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/09 12:05:35 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/12 21:05:28 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,6 @@ int	ft_valid_args(int argc, char **argv, t_struct *ehe)
 int	main(int argc, char **argv)
 {
 	t_struct	*nums;
-	int	i = 0;
 
 	if (argc == 1)
 		return (0);
@@ -182,14 +181,7 @@ int	main(int argc, char **argv)
 	{
 		ft_chunko(nums, 10);
 		solve(nums);
-	}
-	while (i < nums->lena)
-	{
-		printf("%i ", nums->stacka[i]);
-		i++;
-	}
-	printf("\n");
-	
+	}	
 }
 /* int	main()
 {

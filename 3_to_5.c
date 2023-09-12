@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:12:29 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/08 16:52:33 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/12 22:09:07 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void ft_stack_of_4(t_struct *a, int j)
 
 	i = 0;
 	while (i < a->lena)
-	{
+	{	
 		if(a->stacka[i] < a->stacka[j])
 			j = i;
 		i++;
@@ -76,14 +76,20 @@ void	ft_stack_of_5(t_struct *a, int	i, 	int	j)
 			j = i;
 		i++;
 	}
-	if(j == 4 || j == 3)
+	if(j == 4)
 		rra(a);
 	if(j == 3)
+	{
 		rra(a);
-	if(j == 2 || j == 1)
-		ra(a);
+		rra(a);
+	}
 	if(j == 1)
 		ra(a);
+	if(j == 2)
+	{
+		ra(a);
+		ra(a);
+	}
 	if(a->stacka[0] < a->stacka[1] && a->stacka[1] < a->stacka[2] 
 			&& a->stacka[2] < a->stacka[3] && a->stacka[3] < a->stacka[4])
 		return;
