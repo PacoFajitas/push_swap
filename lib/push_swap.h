@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/08 16:53:46 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/09 11:54:09 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stacks
 	int	lena;
 	int	lenb;
 	int	flag_error;
+	int	memsolv;
 }				t_struct;
 
 void	ss(t_struct *stacka);
@@ -47,4 +48,5 @@ void	optimizacion_chunkero(t_struct *aha, int li_chunk);
 void	if_else_optimizacion_chunkero(t_struct *aha, int i, int j, int k);
 void	ft_chunko(t_struct *aha, int chunk_c);
 void	ft_index(t_struct *aha);
+void	solve(t_struct *l);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 13:59:59 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/08 17:29:07 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/09 12:05:26 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_chunko(t_struct *aha, int chunk_c)
 	limit_chunk += aha->len % chunk_c;
 	while (chunk_c > 0)
 	{
+		i = 0;
 		while (i < limit_chunk && aha->lena > 0)
 		{
 			if (aha->stacka[i] <= limit_chunk)
@@ -33,7 +34,7 @@ void	ft_chunko(t_struct *aha, int chunk_c)
 				i++;
 			}
 			else
-				optimizacion_chunkero(aha, limit_chunk);//ra
+				ra(aha);
 		}
 		chunk_c--;
 		limit_chunk += j;
@@ -86,4 +87,72 @@ void	if_else_optimizacion_chunkero(t_struct *aha, int i, int j, int k)
 		while(aha->stacka[0] != look_for)
 			rra(aha);
 	exit(0);
+}
+static int	aux_rr(t_struct *l, int aux_exit, int i)
+{
+	while (i > 0 && aux_exit == 0)
+	{
+		if (l->stackb[0] == l->lenb - 1 && l->memsolv == 0)
+		{
+			pa(l);
+			i--;
+			l->memsolv = 1;
+			if (l->stackb[0] == l->lenb + 1)
+				aux_exit = 1;
+		}
+		if (aux_exit == 0)
+			rb(l);
+		i--;
+	}
+	return (aux_exit);
+}
+
+static int	aux_rrr(t_struct *l, int aux_exit, int i)
+{
+	i = l->lenb - i;
+	while (i > 0 && aux_exit == 0)
+	{
+		if (l->stackb[0] == l->lenb - 1 && l->memsolv == 0)
+		{
+			pa(l);
+			i--;
+			l->memsolv = 1;
+			rrb(l);
+			if (l->stackb[0] == l->lenb + 1)
+				aux_exit = 1;
+		}
+		if (aux_exit == 0)
+			rrb(l);
+		i--;
+	}
+	return (aux_exit);
+}
+
+void	solve(t_struct *l)
+{
+	int	i;
+	int	aux;
+	int	aux_exit;
+
+	aux = l->len;
+	aux_exit = 0;
+	l->memsolv = 0;
+	while (l->lenb > 0)
+	{
+		i = 0;
+		while (l->stackb[i] != l->lenb && i < l->lenb)
+				i++;
+		if (i <= (l->lenb / 2))
+			aux_exit = aux_rr(l, aux_exit, i);
+		else if (i > (l->lenb / 2))
+			aux_rrr(l, aux_exit, i);
+		pa(l);
+		if (l->memsolv == 1)
+		{
+			if (l->stacka[0] - 1 == l->stacka[1])
+				sa(l);
+			l->memsolv = 0;
+			aux_exit = 0;
+		}
+	}
 }

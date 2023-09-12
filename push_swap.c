@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:46:32 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/08 17:18:55 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/09 12:05:35 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,14 +173,22 @@ int	main(int argc, char **argv)
 	 	ft_stack_of_4(nums, 0);
 	if (nums->len == 5)
 	 	ft_stack_of_5(nums, 0, 0);
-	if(nums->len > 5)
-		ft_chunko(nums, 2);
+	if (nums->len > 20)
+	{
+		ft_chunko(nums, 4);
+		solve(nums);
+	}
+	if (nums->len > 150)
+	{
+		ft_chunko(nums, 10);
+		solve(nums);
+	}
 	while (i < nums->lena)
 	{
 		printf("%i ", nums->stacka[i]);
 		i++;
 	}
-	
+	printf("\n");
 	
 }
 /* int	main()
