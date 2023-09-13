@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/09 11:54:09 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/13 21:28:43 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,10 @@ void	ft_stack_of_4(t_struct *a, int j);
 void	ft_stack_of_5(t_struct *a, int	i, 	int	j);
 void	pa(t_struct *l);
 void	pb(t_struct *l);
-void	optimizacion_chunkero(t_struct *aha, int li_chunk);
+void	optimizacion_chunkero(t_struct *aha, int flag_rr, int cuant);
 void	if_else_optimizacion_chunkero(t_struct *aha, int i, int j, int k);
-void	ft_chunko(t_struct *aha, int chunk_c);
+void	ft_chunko(t_struct *aha, int chunk_c, int j);
+void	closer_from_chunk(t_struct *aha, int li_chunk);
 void	ft_index(t_struct *aha);
 void	solve(t_struct *l);
 #endif

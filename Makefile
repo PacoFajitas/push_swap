@@ -6,7 +6,7 @@
 #    By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 20:46:00 by tfiguero          #+#    #+#              #
-#    Updated: 2023/09/12 21:04:42 by tfiguero         ###   ########.fr        #
+#    Updated: 2023/09/13 21:30:05 by tfiguero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME):: ${OBJS} ${HEADER}
 	$(CC) $(FLAGS) $(OBJS) -o ${NAME}
 
 $(NAME):: 
-	@echo "Hello, Libft already compiled 🌚"
+	@echo "Hello, $(NAME) already compiled 🌚"
 	
 %.o:%.c $(HEADER) Makefile
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}

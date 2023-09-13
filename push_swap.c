@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:46:32 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/12 21:05:28 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/13 21:31:53 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,16 +172,28 @@ int	main(int argc, char **argv)
 	 	ft_stack_of_4(nums, 0);
 	if (nums->len == 5)
 	 	ft_stack_of_5(nums, 0, 0);
-	if (nums->len > 20)
+	if (nums->len <= 20 && nums->len > 5)
 	{
-		ft_chunko(nums, 4);
+		ft_chunko(nums, 2, 0);
+		solve(nums);
+	}
+	if (nums->len > 20 && nums->len <= 150)
+	{
+		ft_chunko(nums, 4, 0);
 		solve(nums);
 	}
 	if (nums->len > 150)
 	{
-		ft_chunko(nums, 10);
+		ft_chunko(nums, 10, 0);
 		solve(nums);
-	}	
+	}
+	// int i = 0;
+	// while (i < nums->lena)
+	// {
+	// 	printf("%i ", nums->stacka[i]);
+	// 	i++;
+	// }
+	
 }
 /* int	main()
 {
