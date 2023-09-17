@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/13 21:28:43 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/15 01:46:18 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_swap(int *a, int *b);
 void	ft_index(t_struct *aha);
 void	ft_stack_of_3(t_struct *a);
 void	ft_stack_of_4(t_struct *a, int j);
-void	ft_stack_of_5(t_struct *a, int	i, 	int	j);
+void	ft_stack_of_5(t_struct *a, int i, int j);
 void	pa(t_struct *l);
 void	pb(t_struct *l);
 void	optimizacion_chunkero(t_struct *aha, int flag_rr, int cuant);
@@ -50,4 +50,9 @@ void	ft_chunko(t_struct *aha, int chunk_c, int j);
 void	closer_from_chunk(t_struct *aha, int li_chunk);
 void	ft_index(t_struct *aha);
 void	solve(t_struct *l);
+void	ft_free_struct(t_struct *ehe);
+void	is_done(t_struct *aha);
+int		ft_atoi(const char	*str, t_struct *a);
+int		ft_ini_nums(t_struct *ini, int len);
+int		ft_is_num(char *x);
 #endif

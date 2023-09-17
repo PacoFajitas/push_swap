@@ -6,7 +6,7 @@
 #    By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 20:46:00 by tfiguero          #+#    #+#              #
-#    Updated: 2023/09/13 21:30:05 by tfiguero         ###   ########.fr        #
+#    Updated: 2023/09/15 01:43:48 by tfiguero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,10 @@ SRC = 3_to_5.c \
        movements.c \
        movements2.c \
        push_swap.c \
-	   indexer.c \
+	   indexer+atoi.c \
 	   error.c \
 	   chunker.c \
+	   aux_func.c
 
 OBJS	= 	$(SRC:.c=.o)
 
