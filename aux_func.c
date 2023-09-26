@@ -6,7 +6,7 @@
 /*   By: tfiguero <tfiguero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:22:13 by tfiguero          #+#    #+#             */
-/*   Updated: 2023/09/15 01:46:01 by tfiguero         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:09:29 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	is_done(t_struct *aha)
 		j = aha->stacka[i];
 		i++;
 	}
+	ft_free_struct(aha);
 	exit (0);
 }
 
