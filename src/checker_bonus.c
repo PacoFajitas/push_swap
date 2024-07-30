@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 17:53:54 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/30 23:44:23 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 23:49:34 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_move_double(t_struct *nums, int flag)
 		rra(nums, 0);
 		rrb(nums, 0);
 	}
-	
 }
 
 int	solved(t_struct *nums)
@@ -76,7 +75,7 @@ void	ft_moving(t_struct *nums, char *move)
 void	ft_aux_main(t_struct *nums)
 {
 	char		*move;
-	
+
 	move = get_next_line(STDIN_FILENO);
 	while (move)
 	{

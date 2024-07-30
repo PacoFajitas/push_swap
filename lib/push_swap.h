@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/30 19:09:08 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 23:50:18 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	sa(t_struct *stack, int print);
 void	rra(t_struct *a, int print);
 void	rrb(t_struct *b, int print);
 void	ra(t_struct *a, int print);
-void	rb(t_struct *b,  int print);
+void	rb(t_struct *b, int print);
 void	ft_error(void);
 void	ft_swap(int *a, int *b);
 void	ft_index(t_struct *aha);

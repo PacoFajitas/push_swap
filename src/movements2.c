@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:57:09 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/30 19:21:49 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 23:48:49 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sa(t_struct *stack, int print)
 	if (!&stack->stacka[1])
 		return ;
 	ft_swap(&stack->stacka[0], &stack->stacka[1]);
-	if(print == 1)
+	if (print == 1)
 		write(1, "sa\n", 3);
 }
 
@@ -26,7 +26,7 @@ void	sb(t_struct *stack, int print)
 	if (!&stack->stackb[1])
 		return ;
 	ft_swap(&stack->stackb[0], &stack->stackb[1]);
-	if(print == 1)
+	if (print == 1)
 		write(1, "sb\n", 3);
 }
 
@@ -36,7 +36,7 @@ void	ss(t_struct *stacka, int print)
 		return ;
 	ft_swap(&stacka->stacka[0], &stacka->stacka[1]);
 	ft_swap(&stacka->stackb[0], &stacka->stackb[1]);
-	if(print == 1)
+	if (print == 1)
 		write(1, "ss\n", 3);
 }
 
@@ -61,7 +61,7 @@ void	pa(t_struct *l, int print)
 		l->stackb[i] = l->stackb[i + 1];
 		i++;
 	}
-	if(print == 1)
+	if (print == 1)
 		write(1, "pa\n", 3);
 }
 
@@ -86,6 +86,6 @@ void	pb(t_struct *l, int print)
 		l->stacka[i] = l->stacka[i + 1];
 		i++;
 	}
-	if(print == 1)
+	if (print == 1)
 		write(1, "pb\n", 3);
 }

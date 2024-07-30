@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 21:39:50 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/30 18:59:38 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 23:49:52 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ char	*ft_strjoin_l(char *ret, char *s2)
 	ret = NULL;
 	return (str);
 }
-
 
 size_t	ft_strlen_l(char *s)
 {
