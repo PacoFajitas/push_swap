@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:14:33 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/29 23:52:01 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 19:09:08 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,21 @@ typedef struct s_stacks
 	int	memsolv;
 }				t_struct;
 
-void	ss(t_struct *stacka);
-void	sb(t_struct *stack);
-void	sa(t_struct *stack);
-void	rra(t_struct *a);
-void	rrb(t_struct *b);
-void	ra(t_struct *a);
-void	rb(t_struct *b);
+void	ss(t_struct *stacka, int print);
+void	sb(t_struct *stack, int print);
+void	sa(t_struct *stack, int print);
+void	rra(t_struct *a, int print);
+void	rrb(t_struct *b, int print);
+void	ra(t_struct *a, int print);
+void	rb(t_struct *b,  int print);
 void	ft_error(void);
 void	ft_swap(int *a, int *b);
 void	ft_index(t_struct *aha);
 void	ft_stack_of_3(t_struct *a);
 void	ft_stack_of_4(t_struct *a, int j);
 void	ft_stack_of_5(t_struct *a, int i, int j);
-void	pa(t_struct *l);
-void	pb(t_struct *l);
+void	pa(t_struct *l, int print);
+void	pb(t_struct *l, int print);
 void	optimizacion_chunkero(t_struct *aha, int flag_rr, int cuant);
 int		ft_valid_args(int argc, char **argv, t_struct *ehe);
 int		ft_populate(char **src, t_struct *dest);

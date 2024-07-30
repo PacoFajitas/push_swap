@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 12:10:31 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/29 21:50:32 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 19:12:00 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_swap(int *a, int *b)
 	*b = c;
 }
 
-void	rra(t_struct *a)
+void	rra(t_struct *a, int print)
 {
 	int	i;
 
@@ -34,10 +34,11 @@ void	rra(t_struct *a)
 		ft_swap(&a->stacka[0], &a->stacka[i]);
 		i++;
 	}
-	write(1, "rra\n", 4);
+	if (print == 1)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_struct *b)
+void	rrb(t_struct *b, int print)
 {
 	int	i;
 
@@ -47,10 +48,11 @@ void	rrb(t_struct *b)
 		ft_swap(&b->stackb[0], &b->stackb[i]);
 		i++;
 	}
-	write(1, "rrb\n", 4);
+	if (print == 1)
+		write(1, "rrb\n", 4);
 }
 
-void	ra(t_struct *a)
+void	ra(t_struct *a, int print)
 {
 	int	i;
 
@@ -60,10 +62,11 @@ void	ra(t_struct *a)
 		ft_swap(&a->stacka[i - 1], &a->stacka[i]);
 		i++;
 	}
-	write(1, "ra\n", 3);
+	if (print == 1)
+		write(1, "ra\n", 3);
 }
 
-void	rb(t_struct *b)
+void	rb(t_struct *b, int print)
 {
 	int	i;
 
@@ -73,5 +76,6 @@ void	rb(t_struct *b)
 		ft_swap(&b->stackb[i - 1], &b->stackb[i]);
 		i++;
 	}
-	write(1, "rb\n", 3);
+	if (print == 1)
+		write(1, "rb\n", 3);
 }

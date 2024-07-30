@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:55:08 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/29 23:59:06 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:51:37 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+# include "./get_next_line/get_next_line.h"
 
 typedef struct s_list
 {
@@ -63,11 +60,14 @@ int		ft_strcmp(char *ehe, char *cmp);
 char	*ft_strjoinfree(char *s1, char *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin_char(char *str, char add);
-char	*get_next_line(int fd);
-char	*ft_strjoin_l(char *ret, char *s2);
-char	*ft_strchr_l(const char *s, int c);
-char	*ft_substr_l(char *s, unsigned int start, size_t len);
-char	*ft_clean_buffer(char *data);
-char	*ft_fill_data(char *data, int fd, int flag);
-char	*ft_free(char **buffer);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
+			void (*del)(void *));
 #endif

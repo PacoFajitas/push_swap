@@ -6,11 +6,11 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 21:39:50 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/29 23:59:20 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:59:38 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 char	*ft_substr_l(char *s, unsigned int start, size_t len)
 {
@@ -20,10 +20,10 @@ char	*ft_substr_l(char *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
-	if (ft_strlen(s) <= start)
+	if (ft_strlen_l(s) <= start)
 		len = 0;
-	else if (ft_strlen(s + start) < len)
-		len = (ft_strlen(s + start));
+	else if (ft_strlen_l(s + start) < len)
+		len = (ft_strlen_l(s + start));
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
@@ -60,7 +60,7 @@ char	*ft_strjoin_l(char *ret, char *s2)
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(ft_strlen(ret) + ft_strlen(s2) + 1);
+	str = (char *)malloc(ft_strlen_l(ret) + ft_strlen_l(s2) + 1);
 	if (!str)
 		return (ft_free(&ret));
 	while (ret[i])
@@ -78,4 +78,15 @@ char	*ft_strjoin_l(char *ret, char *s2)
 	free(ret);
 	ret = NULL;
 	return (str);
+}
+
+
+size_t	ft_strlen_l(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

@@ -6,11 +6,11 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 21:37:43 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/29 23:58:27 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:55:59 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 char	*ft_free(char **buffer)
 {
@@ -43,7 +43,7 @@ char	*ft_fill_data(char *data, int fd, int flag)
 		}
 	}
 	free(buffer);
-	if ((data && ft_strlen(data) == 0) && flag == 0)
+	if ((data && ft_strlen_l(data) == 0) && flag == 0)
 		return (ft_free(&data));
 	return (data);
 }
@@ -55,10 +55,10 @@ char	*ft_clean_buffer(char *data)
 	size_t	len_og;
 	size_t	x;
 
-	len_og = ft_strlen(data);
+	len_og = ft_strlen_l(data);
 	if (!(ft_strchr_l(data, '\n') + 1))
 		return (NULL);
-	len_nl = ft_strlen(ft_strchr_l(data, '\n') + 1);
+	len_nl = ft_strlen_l(ft_strchr_l(data, '\n') + 1);
 	nl = (char *)malloc((len_nl + 1) * sizeof(char));
 	if (!nl)
 		return (ft_free(&data));
@@ -81,7 +81,7 @@ char	*ft_else(char **data, char **ret)
 {
 	if (ft_strchr_l(*data, '\n'))
 	{
-		*ret = ft_substr_l(*data, 0, ft_strlen(*data) - ft_strlen
+		*ret = ft_substr_l(*data, 0, ft_strlen_l(*data) - ft_strlen_l
 				(ft_strchr_l(*data, '\n')) + 1);
 		if (!*ret)
 			return (ft_free(data));

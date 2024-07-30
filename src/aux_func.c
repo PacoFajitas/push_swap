@@ -6,12 +6,11 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:22:13 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/29 21:50:56 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 19:10:33 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	is_done(t_struct *aha)
 {
@@ -65,7 +64,7 @@ void	optimizacion_chunkero(t_struct *aha, int flag_rr, int cuant)
 	{
 		while (cuant > 0)
 		{
-			ra(aha);
+			ra(aha, 1);
 			cuant--;
 		}
 	}
@@ -73,7 +72,7 @@ void	optimizacion_chunkero(t_struct *aha, int flag_rr, int cuant)
 	{
 		while (cuant > 0)
 		{
-			rra(aha);
+			rra(aha, 1);
 			cuant--;
 		}
 	}

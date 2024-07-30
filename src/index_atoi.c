@@ -6,12 +6,11 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 19:26:46 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/29 23:51:11 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:18:07 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_index(t_struct *aha)
 {

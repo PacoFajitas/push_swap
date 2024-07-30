@@ -6,7 +6,7 @@
 #    By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 23:21:11 by tfiguero          #+#    #+#              #
-#    Updated: 2024/07/29 23:48:17 by tfiguero         ###   ########.fr        #
+#    Updated: 2024/07/30 19:00:31 by tfiguero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ $(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c | $(OBJS_PATH)
 	@$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_PATH)
 
 libft:
-	@$(MAKE) -C lib/libft --no-print-directory
+	@$(MAKE) -C lib/libft bonus --no-print-directory
 
 $(OBJS_PATH):
 	@$(MKDIR_P) $(OBJS_PATH)
